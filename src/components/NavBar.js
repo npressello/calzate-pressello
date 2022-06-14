@@ -9,14 +9,14 @@ function NavBar() {
       </div>
       <nav>
         <ul className="flex justify-between">
-          <li><a href="" className="bg-blue-600">Inicio</a></li>
-          <li><a href="" className="bg-blue-600">Hombre</a></li>
-          <li><a href="" className="bg-blue-600">Mujer</a></li>
-          <li><a href="" className="bg-blue-600">Marcas</a></li>
+          <li><a href="#" className="border border-rose-600">Inicio</a></li>
+          <li><a href="#" className="border border-rose-600">Hombre</a></li>
+          <li><a href="#" className="border border-rose-600">Mujer</a></li>
+          <li><a href="#" className="border border-rose-600">Marcas</a></li>
         </ul>
       </nav>
       <div>
-        <a href="">Cuenta</a>
+        <a href="#">Cuenta</a>
       </div>
     </header>
   );
