@@ -11,14 +11,14 @@ function NavBar() {
       </div>
       <nav>
         <ul className="flex justify-between">
-          <li><a href="index.html" className="border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:border-b-4 hover:font-medium">Inicio</a></li>
-          <li><a href="#" className="border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:border-b-4 hover:font-medium">Hombre</a></li>
-          <li><a href="#" className="border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:border-b-4 hover:font-medium">Mujer</a></li>
-          <li><a href="#" className="border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:border-b-4 hover:font-medium">Marcas</a></li>
+          <li className='mx-2'><a href="index.html" className="border-b-4 border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 font-medium">Inicio</a></li>
+          <li className='mx-2'><a href="#" className="border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:border-b-4">Hombre</a></li>
+          <li className='mx-2'><a href="#" className="border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:border-b-4">Mujer</a></li>
+          <li className='mx-2'><a href="#" className="border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:border-b-4">Marcas</a></li>
         </ul>
       </nav>
       <div>
-        <a href="#" className='bg-calzate-bg-primary text-calzate-clr-primary rounded-2xl mx-4 px-3 py-2 align-middle transition-all hover:bg-calzate-bg-secondary hover:shadow-md'>Cuenta</a>
+        <a href="#" className='bg-calzate-bg-primary text-calzate-clr-primary rounded-3xl mx-4 px-3 py-2 align-middle transition-all hover:bg-calzate-bg-secondary hover:shadow-md'>Cuenta</a>
       </div>
     </header>
   );
