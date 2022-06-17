@@ -17,14 +17,14 @@ function NavBar() {
           </button>
         </div>
 
-        <nav className='hidden ml-auto md:flex'>
-          <ul className="flex flex-col md:flex-row justify-between">
-            <li className='mx-2'><a href="index.html" className="border-b-4 border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 font-medium">Inicio</a></li>
-            <li className='mx-2'><a href="#" className="border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:border-b-4">Hombre</a></li>
-            <li className='mx-2'><a href="#" className="border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:border-b-4">Mujer</a></li>
-            <li className='mx-2'><a href="#" className="border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:border-b-4">Marcas</a></li>
-            <li className='mx-2'><a href="#" className="md:hidden border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:border-b-4">Ingresar</a></li>
-            <li className='mx-2'><a href="#" className="md:hidden border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:border-b-4">Registrarse</a></li>
+        <nav className='md:flex md:ml-auto mt-3 md:mt-0' id='navbar-collapse'> {/*colocar hidden en lugar de flex al terminar de testear*/}
+          <ul className="flex flex-col md:flex-row md:justify-between">
+            <li className='mx-2'><a href="#" className="block md:inline bg-calzate-bg-primary md:bg-white rounded md:rounded-none md:border-b-4 border-calzate-bg-primary text-calzate-clr-primary md:text-calzate-clr-secondary mx-2 px-2 py-1 font-medium">Inicio</a></li>
+            <li className='mx-2'><a href="#" className="block md:inline rounded md:rounded-none hover:bg-calzate-bg-tertiary md:hover:bg-white md:border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:md:border-b-4">Hombre</a></li>
+            <li className='mx-2'><a href="#" className="block md:inline rounded md:rounded-none hover:bg-calzate-bg-tertiary md:hover:bg-white md:border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:md:border-b-4">Mujer</a></li>
+            <li className='mx-2'><a href="#" className="block md:inline rounded md:rounded-none hover:bg-calzate-bg-tertiary md:hover:bg-white md:border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:md:border-b-4">Marcas</a></li>
+            <li className='mx-2'><a href="#" className="block md:inline rounded md:rounded-none hover:bg-calzate-bg-tertiary md:hover:bg-white md:hidden md:border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:md:border-b-4">Ingresar</a></li>
+            <li className='mx-2'><a href="#" className="block md:inline rounded md:rounded-none hover:bg-calzate-bg-tertiary md:hover:bg-white md:hidden md:border-b border-calzate-bg-primary text-calzate-clr-secondary mx-2 px-2 py-1 transition-all hover:md:border-b-4">Registrarse</a></li>
           </ul>
         </nav>
 
