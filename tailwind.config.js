@@ -12,6 +12,7 @@ module.exports = {
         'calzate-bg-secondary': 'hsl(22, 100%, 48%)',
         'calzate-clr-primary': 'hsl(22, 100%, 98%)',
         'calzate-clr-secondary': 'hsl(22, 80%, 36%)',
+        'calzate-clr-tertiary': 'hsl(22, 80%, 18%)',
       }
     },
   },
