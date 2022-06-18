@@ -29,10 +29,16 @@ function NavBar() {
         </nav>
 
         <div className='hidden ml-auto md:flex'>
-          <a href="#" className='bg-calzate-400 text-calzate-900 rounded-3xl mx-4 px-3 py-2 align-middle transition-all hover:bg-calzate-300 hover:shadow-md'>Cuenta</a>
-          <div>
+          <a href="#" className='z-10 bg-calzate-400 text-calzate-900 rounded-3xl mx-4 px-3 py-2 align-middle transition-all hover:bg-calzate-300 hover:shadow-md'>Cuenta</a>
+          <div className='absolute flex flex-col'>
+            <label htmlFor="inputEmail">Mail:</label>
             <input type="email" name="email" id="inputEmail" />
+            <label htmlFor="inputPassword">Contraseña:</label>
             <input type="password" name="password" id="inputPassword" />
+            <div className='flex'>
+              <button>Ingresar</button>
+              <button>Registrarse</button>
+            </div>            
           </div>
         </div>
 
