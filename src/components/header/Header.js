@@ -4,9 +4,9 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import NavBar from './NavBar';
 import LoginNavBar from './LoginNavBar';
-import ShoppingCartButton from './ShoppingCartButton';
+import CartWidget from './CartWidget';
 
-function Header() {
+const Header = () => {
   return(
     <header className="shadow-md py-1 md:py-2">
       <div className='container px-4 mx-auto md:flex md:items-center'>
@@ -17,7 +17,7 @@ function Header() {
             <span className="font-semibold text-xl tracking-tight mx-2">Calzate</span>
           </a>
           <div className='flex justify-between my-auto w-20 md:hidden'>
-            <ShoppingCartButton />
+            <CartWidget />
             <button className='h-8 w-8 border border-solid border-calzate-300 rounded text-calzate-200 opacity-75 hover:opacity-100' id="navbar-toggle">
               <FontAwesomeIcon icon={ faBars } />
             </button>

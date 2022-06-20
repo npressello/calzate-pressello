@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
-function NavBar() {
+const NavBar = () => {
   return (
     <>
         <nav className='hidden md:flex md:ml-auto mt-6 md:mt-0' id='navbar-collapse'> {/*colocar hidden en lugar de flex al terminar de testear*/}

@@ -1,10 +1,10 @@
-import ShoppingCartButton from './ShoppingCartButton';
+import CartWidget from './CartWidget';
 
-function LoginNavBar() {
+const LoginNavBar = () => {
   return (
     <>
         <div className='relative hidden ml-auto md:flex'>
-          <ShoppingCartButton />
+          <CartWidget />
           <a id='toggle-login-popup' href="#" className='bg-calzate-400 text-calzate-900 rounded-3xl mx-4 px-3 py-2 align-middle transition-all hover:bg-calzate-300 hover:shadow-md'>Cuenta</a>
           <div className='hidden absolute rounded border border-calzate-700 p-2 top-16 right-0 bg-white flex flex-col shadow-md'> {/*colocar hidden al terminar de testear*/}
             <label htmlFor="inputEmail">Correo electrónico:</label>
