@@ -1,0 +1,10 @@
+.appearance-text::-webkit-outer-spin-button,
+.appearance-text::-webkit-inner-spin-button{
+  appearance: none !important;
+  -webkit-appearance: none !important;  
+  margin: 0;
+}
+
+.appearance-text{
+  -moz-appearance: textfield !important;
+}

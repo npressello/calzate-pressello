@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = ({mobileOpen}) => {
-  console.log(mobileOpen);
   return (
     <>
         <nav className={`${mobileOpen} md:flex md:ml-auto mt-6 md:mt-0`} id='navbar-collapse'>
