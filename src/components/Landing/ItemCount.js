@@ -26,9 +26,11 @@ const ItemCount = (props) => {
     if (number < 1) {
       number = 1;      
       setSubstractBtnDisabled(true);
+      setAddBtnDisabled(false);
     } else if (number > props.stock) {
       number = props.stock;
       setAddBtnDisabled(true);
+      setSubstractBtnDisabled(false);
     } else {
       setSubstractBtnDisabled(false);
       setAddBtnDisabled(false);
