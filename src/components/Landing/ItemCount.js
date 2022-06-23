@@ -9,8 +9,10 @@ const ItemCount = (props) => {
   const itemStock = props.stock;
   let input = document.getElementById("itemQuantityInput");
 
-  if (itemStock == 0) document.getElementById("addToCartBtn").disabled = true;
-  else document.getElementById("addToCartBtn").disabled = false;
+  const checkIfOutStock = () => {
+    if (itemStock === 0) document.getElementById("addToCartBtn").disabled = true;
+    else document.getElementById("addToCartBtn").disabled = false;
+  }  
 
   const addItemToCart = () => {
     props.onAdd(input.value);
@@ -38,6 +40,8 @@ const ItemCount = (props) => {
     setItemQuantity(number);
   };
 
+// *** CORREGIR QUE SI UN BOTON SE ANULA, SE ANULAN TODOS. Hay que evitar usar id y usar algo especifico de react
+
   return(
     <div className="my-4 mx-auto items-center text-center bg-neutral-100 w-fit p-2">
       <div className='mr-auto border-2 border-neutral-400 rounded p-1 w-40 bg-white'>
@@ -49,7 +53,7 @@ const ItemCount = (props) => {
           <FontAwesomeIcon className='text-lg text-calzate-300' icon={ faPlus } />
         </button>
       </div>
-      <button id="addToCartBtn" onClick={addItemToCart} className='mt-2 w-40 rounded border-2 border-calzate-500 font-semibold text-neutral-600 hover:text-calzate-900 bg-white hover:bg-calzate-500 disabled:bg-neutral-200 disabled:hover:text-neutral-600'>Agregar</button>
+      <button id="addToCartBtn" onLoad={checkIfOutStock} onClick={addItemToCart} className='mt-2 w-40 rounded border-2 border-calzate-500 font-semibold text-neutral-600 hover:text-calzate-900 bg-white hover:bg-calzate-500 disabled:bg-neutral-200 disabled:hover:text-neutral-600'>Agregar</button>
     </div>
   );  
 }
