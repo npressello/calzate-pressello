@@ -10,6 +10,7 @@ const ItemListContainer = (props) => {
       <h1 className="font-bold">Bienvenido a Calzate, {props.name}</h1>
       <ItemCount stock={10} initial={1} onAdd={addToCart} />
       <ItemCount stock={0} initial={1} onAdd={addToCart} />
+      <ItemCount stock={20} initial={5} onAdd={addToCart} />
     </div>
   );  
 }
