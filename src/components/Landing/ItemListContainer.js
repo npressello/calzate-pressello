@@ -23,7 +23,7 @@ const ItemListContainer = (props) => {
       <h3>Inicial: 5 - Stock: 20</h3>
       <ItemCount stock={20} initial={5} onAdd={addToCart} />
 
-      <span className="font-bold text-lg">¡Se agregaron {itemsToAdd} al carrito!</span>
+      <span className="font-bold text-lg">¡Se agregaron {itemsToAdd} productos al carrito!</span>
     </div>
   );  
 }
