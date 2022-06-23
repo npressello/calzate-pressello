@@ -8,7 +8,6 @@ const ItemCount = (props) => {
   const [itemQuantity, setItemQuantity] = useState(props.initial);
   const [substractBtnDisabled, setSubstractBtnDisabled] = useState(false);
   const [addBtnDisabled, setAddBtnDisabled] = useState(false);
-  const itemStock = props.stock;
 
   const addItemToCart = () => {
     if (props.stock >= itemQuantity)
@@ -27,8 +26,8 @@ const ItemCount = (props) => {
     if (number < 1) {
       number = 1;      
       setSubstractBtnDisabled(true);
-    } else if (number > itemStock) {
-      number = itemStock;
+    } else if (number > props.stock) {
+      number = props.stock;
       setAddBtnDisabled(true);
     } else {
       setSubstractBtnDisabled(false);
@@ -48,7 +47,7 @@ const ItemCount = (props) => {
           <FontAwesomeIcon className='text-lg text-calzate-300' icon={ faPlus } />
         </button>
       </div>
-      <button disabled={itemStock === 0 ? true : false} onClick={addItemToCart} className='mt-2 w-40 rounded border-2 border-calzate-500 font-semibold text-neutral-600 hover:text-calzate-900 bg-white hover:bg-calzate-500 disabled:bg-neutral-200 disabled:hover:text-neutral-600'>Agregar</button>
+      <button disabled={props.stock === 0 ? true : false} onClick={addItemToCart} className='mt-2 w-40 rounded border-2 border-calzate-500 font-semibold text-neutral-600 hover:text-calzate-900 bg-white hover:bg-calzate-500 disabled:bg-neutral-200 disabled:hover:text-neutral-600'>Agregar</button>
     </div>
   );  
 }
