@@ -11,7 +11,8 @@ const ItemCount = (props) => {
   const itemStock = props.stock;
 
   const addItemToCart = () => {
-    props.onAdd(itemQuantity);
+    if (props.stock >= itemQuantity)
+      props.onAdd(itemQuantity);
   };
 
   const addNumber = () => {
@@ -23,8 +24,8 @@ const ItemCount = (props) => {
   };
 
   const setNumber = (number) => {
-    if (number < 0) {
-      number = 0;      
+    if (number < 1) {
+      number = 1;      
       setSubstractBtnDisabled(true);
     } else if (number > itemStock) {
       number = itemStock;
