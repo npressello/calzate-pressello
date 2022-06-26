@@ -18,7 +18,10 @@ module.exports = {
         'calzate-700': 'hsl(22, 100%, 84%)',        
         'calzate-800': 'hsl(22, 100%, 92%)',
         'calzate-900': 'hsl(22, 100%, 98%)',
-      }
+      },
+      fontFamily: {
+        'roboto': ['Roboto', 'sans-serif']
+      },
     },
   },
   plugins: [],

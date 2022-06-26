@@ -4,7 +4,7 @@ import ItemListContainer from './components/Landing/ItemListContainer';
 
 function App() {
   return (
-    <div>
+    <div className='bg-neutral-100'>
       <Header />
       <ItemListContainer name='Nico' />
     </div>

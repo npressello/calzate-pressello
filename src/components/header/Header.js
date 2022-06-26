@@ -1,11 +1,10 @@
 import logo from '../../assets/images/shoes.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import NavBar from './NavBar';
 import LoginNavBar from './LoginNavBar';
 import CartWidget from './CartWidget';
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState("hidden");
@@ -18,7 +17,7 @@ const Header = () => {
   }
 
   return(
-    <header className="shadow-md py-1 md:py-2">
+    <header className="shadow-md py-1 md:py-2 bg-white">
       <div className='container px-4 mx-auto md:flex md:items-center'>
 
         <div className='flex justify-between item-center'>
