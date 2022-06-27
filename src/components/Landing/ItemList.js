@@ -1,6 +1,31 @@
 import Item from "./Item";
+import { useEffect, useState } from "react";
 
-const ItemList = () => {
+const ItemList = (prop) => {
+  const [productCat, setCategory] = useState(prop.productCat);
+  const [products, setProducts] = useState([]);
+
+  const getProductsData = () => {
+    fetch('products.json', {
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+    .then( (resp) => resp.json() )
+    .then( (data) => {       
+      data.forEach(element => {
+        element.imgUrl = images[element.imgUrl];
+      });
+      setProducts(data);
+    });
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      getProductsData();
+    }, 2000);
+  }, [productCat]);
 
   const importAll = (r) => {
     let img = {};
@@ -10,75 +35,9 @@ const ItemList = () => {
 
   const images = importAll(require.context('../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
 
-  const product = [
-    {
-      id: '00',
-      brand: 'Nike',
-      title: 'Max F4',
-      description: 'Zapatillas Nike elegante para hombre',
-      size: [38, 39, 40, 41, 42],
-      score: '4.5',
-      color: ['Gris', 'Azul', 'Negro'],
-      price: 12999,
-      imgUrl: images['00']
-    }, {
-      id: '01',
-      brand: 'Nike',
-      title: 'Runner Z8',
-      description: 'Zapatillas Nike deportivas para hombre y mujer',
-      size: [38, 39, 40, 41, 42],
-      score: '4.2',
-      color: ['Naranja', 'Azul', 'Negro'],
-      price: 15999,
-      imgUrl: images['01']
-    },
-    {
-      id: '02',
-      brand: 'Andina',
-      title: 'Terrain',
-      description: 'Zapatillas Andina deportivas para Mujer',
-      size: [38, 39, 40, 41, 42],
-      score: '2.7',
-      color: ['Amarilla'],
-      price: 8999,
-      imgUrl: images['02']
-    },
-    {
-      id: '03',
-      brand: 'Scandinavian',
-      title: 'Street Blue',
-      description: 'Zapatillas Scandinavian deportivas para hombre',
-      size: [38, 39, 40, 41, 42],
-      score: '4.5',
-      color: ['Azul'],
-      price: 4699,
-      imgUrl: images['03']
-    }
-  ];
-
-
   return(
-    <div className="container mx-auto grid gap-x-0.5 auto-cols-min md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-      <Item item={product[0]} />
-      <Item item={product[1]} />
-      <Item item={product[2]} />
-      <Item item={product[3]} />
-      <Item item={product[0]} />
-      <Item item={product[1]} />
-      <Item item={product[2]} />
-      <Item item={product[3]} />
-      <Item item={product[0]} />
-      <Item item={product[1]} />
-      <Item item={product[2]} />
-      <Item item={product[3]} />
-      <Item item={product[0]} />
-      <Item item={product[1]} />
-      <Item item={product[2]} />
-      <Item item={product[3]} />
-      <Item item={product[0]} />
-      <Item item={product[1]} />
-      <Item item={product[2]} />
-      <Item item={product[3]} />
+    <div className="container mx-auto  md:gap-x-0.5 md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      {products.map(prod => <Item item={prod} />)}
     </div>
   );
 }
