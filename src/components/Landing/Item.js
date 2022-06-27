@@ -11,7 +11,7 @@ const Item = ({item}) => {
   };
 
   return (
-    <div className="w-60 mt-4 bg-white rounded flex flex-col shadow-md overflow-hidden transition delay-100 hover:scale-[1.1] hover:shadow-2xl hover:z-10">
+    <div className="w-60 mt-4 mx-auto bg-white rounded flex flex-col shadow-md overflow-hidden transition delay-100 hover:scale-[1.1] hover:shadow-2xl hover:z-10">
       <div className="relative border-b border-black ">
         <img className="w-60 h-60 object-cover mx-auto " src={item.imgUrl} alt={item.title} />
         <button className='absolute w-10 h-10 rounded-full right-2 top-2 bg-calzate-400'>

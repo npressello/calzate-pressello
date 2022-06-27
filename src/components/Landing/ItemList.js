@@ -58,7 +58,7 @@ const ItemList = () => {
 
 
   return(
-    <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+    <div className="container mx-auto grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
       <Item item={product[0]} />
       <Item item={product[1]} />
       <Item item={product[2]} />
