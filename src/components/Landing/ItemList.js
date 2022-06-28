@@ -36,7 +36,7 @@ const ItemList = (prop) => {
   const images = importAll(require.context('../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
 
   return(
-    <div className="container mx-auto  md:gap-x-0.5 md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+    <div className="container mx-auto gap-x-0.5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
       {products.map(prod => <Item item={prod} />)}
     </div>
   );
