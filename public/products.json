@@ -7,7 +7,7 @@
     "gender": "hombre",
     "size": [38, 39, 40, 41, 42],
     "score": "4.5",
-    "color": ["bg-stone-500", "bg-blue-500", "bg-black"],
+    "color": ["gris", "azul", "negro"],
     "price": 12999,
     "imgUrl": "00"
   },
@@ -19,7 +19,7 @@
     "gender": "unisex",
     "size": [36, 37, 38, 39, 40, 41, 42],
     "score": "4.2",
-    "color": ["bg-orange-500", "bg-blue-500", "bg-black"],
+    "color": ["naranja", "azul", "negro"],
     "price": 15999,
     "imgUrl": "01"
   },
@@ -31,7 +31,7 @@
     "gender": "mujer",
     "size": [35, 36, 37, 38, 39],
     "score": "2.7",
-    "color": ["bg-yellow-500"],
+    "color": ["amarillo"],
     "price": 8999,
     "imgUrl": "02"
   },
@@ -43,7 +43,7 @@
     "gender": "hombre",
     "size": [38, 39, 40, 41, 42],
     "score": "4.5",
-    "color": ["bg-blue-500"],
+    "color": ["azul"],
     "price": 4699,
     "imgUrl": "03"
   },
@@ -55,7 +55,7 @@
     "gender": "unisex",
     "size": [36,37, 38, 39, 40, 41],
     "score": "4.3",
-    "color": ["bg-orange-500", "bg-blue-500", "bg-black"],
+    "color": ["naranja", "azul", "negro"],
     "price": 14999,
     "imgUrl": "04"
   },
@@ -67,7 +67,7 @@
     "gender": "mujer",
     "size": [36, 37, 38],
     "score": "3.2",
-    "color": ["bg-red-500", "bg-yellow-500"],
+    "color": ["rojo", "amarillo"],
     "price": 6999,
     "imgUrl": "05"
   },
@@ -79,7 +79,7 @@
     "gender": "hombre",
     "size": [38, 39, 40, 41, 42],
     "score": "3.9",
-    "color": ["bg-blue-500", "bg-black"],
+    "color": ["azul", "negro"],
     "price": 13499,
     "imgUrl": "06"
   },
@@ -91,7 +91,7 @@
     "gender": "hombre",
     "size": [38, 39, 40, 41, 42, 43],
     "score": "4.8",
-    "color": ["bg-green-500", "bg-blue-500", "bg-black", "bg-yellow-500"],
+    "color": ["verde", "azul", "negro", "amarillo"],
     "price": 18799,
     "imgUrl": "07"
   },
@@ -103,7 +103,7 @@
     "gender": "unisex",
     "size": [36, 37, 38, 39, 40, 41, 42],
     "score": "4.6",
-    "color": ["bg-stone-500", "bg-blue-500", "bg-sky-500", "bg-violet-500"],
+    "color": ["gris", "azul", "cielo", "violeta"],
     "price": 15499,
     "imgUrl": "08"
   },
@@ -115,7 +115,7 @@
     "gender": "mujer",
     "size": [35, 36, 37, 38, 39],
     "score": "3.5",
-    "color": ["bg-stone-500", "bg-black"],
+    "color": ["gris", "negro"],
     "price": 7999,
     "imgUrl": "09"
   },
@@ -127,7 +127,7 @@
     "gender": "unisex",
     "size": [35, 36, 37, 38, 39, 40, 41, 42],
     "score": "4.8",
-    "color": ["bg-green-500", "bg-blue-500", "bg-black", "bg-red-500", "bg-pink-500", "bg-purple-500"],
+    "color": ["verde", "azul", "negro", "rojo", "rosa", "purpura"],
     "price": 11999,
     "imgUrl": "10"
   },
@@ -139,7 +139,7 @@
     "gender": "mujer",
     "size": [35, 36, 37, 38],
     "score": "4.5",
-    "color": ["bg-pink-500", "bg-violet-500"],
+    "color": ["rosa", "violeta"],
     "price": 12199,
     "imgUrl": "11"
   },
@@ -151,7 +151,7 @@
     "gender": "unisex",
     "size": [36, 37, 38, 39, 40, 41, 42, 43],
     "score": "4.9",
-    "color": ["bg-lime-500"],
+    "color": ["lima"],
     "price": 18999,
     "imgUrl": "12"
   },
@@ -163,7 +163,7 @@
     "gender": "hombre",
     "size": [38, 39, 40, 41, 42],
     "score": "4.7",
-    "color": ["bg-orange-500", "bg-yellow-500"],
+    "color": ["naranja", "amarillo"],
     "price": 14899,
     "imgUrl": "13"
   },
@@ -175,7 +175,7 @@
     "gender": "hombre",
     "size": [38, 39, 40, 41, 42],
     "score": "4.8",
-    "color": ["bg-red-500", "bg-orange-500"],
+    "color": ["rojo", "naranja"],
     "price": 11499,
     "imgUrl": "14"
   },
@@ -187,7 +187,7 @@
     "gender": "hombre",
     "size": [38, 39, 40, 41, 42],
     "score": "2.7",
-    "color": ["bg-stone-500", "bg-blue-500", "bg-black"],
+    "color": ["gris", "azul", "negro"],
     "price": 7999,
     "imgUrl": "15"
   },
@@ -199,7 +199,7 @@
     "gender": "mujer",
     "size": [35, 36, 37, 38],
     "score": "4.2",
-    "color": ["bg-pink-500", "bg-violet-500"],
+    "color": ["rosa", "violeta"],
     "price": 12999,
     "imgUrl": "16"
   },
@@ -211,7 +211,7 @@
     "gender": "hombre",
     "size": [38, 39, 40, 41, 42],
     "score": "2.4",
-    "color": ["bg-stone-500", "bg-red-500", "bg-black"],
+    "color": ["gris", "rojo", "negro"],
     "price": 7499,
     "imgUrl": "17"
   }
