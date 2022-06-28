@@ -37,7 +37,7 @@ const ItemList = (prop) => {
 
   return(
     <div className="container mx-auto gap-x-0.5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-      {products.map(prod => <Item item={prod} />)}
+      {products.map((prod, index) => <Item key={index} item={prod} />)}
     </div>
   );
 }

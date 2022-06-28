@@ -6,8 +6,6 @@ import { useState } from 'react';
 const Item = ({item}) => {
   const [heartClicked, setHeartClicked] = useState(false);
 
-  console.log(item);
-
   const clickHeart = () => {
     setHeartClicked(!heartClicked);
   };
@@ -58,7 +56,7 @@ const Item = ({item}) => {
           <span className="absolute right-0 -top-8 shadow-xl p-1 border border-neutral-600 rounded-md font-bold text-xl tracking-wide text-right text-calzate-900 bg-calzate-400">${item.price}</span>
           <p className='mt-4 italic'>Colores disponibles: </p>
           <ul className='flex'>
-            {item.color.map(c => <li key={item.id} className={`${convertColor(c)} rounded-full w-4 h-4 mr-1`}></li>)}
+            {item.color.map((c, index) => <li key={index} className={`${convertColor(c)} rounded-full w-4 h-4 mr-1`}></li>)}
           </ul>
         </div>
       </a>
