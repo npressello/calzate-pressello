@@ -1,6 +1,6 @@
 import CartWidget from './CartWidget';
 
-const LoginNavBar = () => {
+const LoginNavBar = (props) => {
   const toggleLoginPopup = () => {
     document.getElementById("login-popup-div").classList.toggle("hidden");
   }
@@ -8,7 +8,7 @@ const LoginNavBar = () => {
   return (
     <>
         <div className='relative hidden ml-auto md:flex'>
-          <CartWidget />
+          <CartWidget itemsInCart={props.itemsInCart} />
           <a id='toggle-login-popup' onClick={toggleLoginPopup} href="#" className='bg-calzate-400 text-calzate-900 rounded-3xl mx-4 px-3 py-2 align-middle transition-all hover:bg-calzate-300 hover:shadow-md'>Cuenta</a>
           <div id='login-popup-div' className='hidden absolute rounded border border-calzate-700 p-2 top-16 right-0 bg-white flex flex-col shadow-md z-10'>
             <label htmlFor="inputEmail">Correo electrónico:</label>

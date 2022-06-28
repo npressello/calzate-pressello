@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState("hidden");
+  const [totalItemsInCart, setTotalItemsInCart] = useState(0);
   
   const toggleMobileNavbar = () => {
     setIsOpen((prevValue) => {
@@ -26,15 +27,15 @@ const Header = () => {
             <span className="font-semibold text-xl tracking-tight mx-2">Calzate</span>
           </a>
           <div className='flex justify-between my-auto w-20 md:hidden'>
-            <CartWidget />
-            <button onClick={toggleMobileNavbar} className='h-8 w-8 border border-solid border-calzate-300 rounded text-calzate-200 opacity-75 hover:opacity-100' id="navbar-toggle">
+            <CartWidget itemsInCart={totalItemsInCart} />
+            <button onClick={toggleMobileNavbar} className='h-8 w-8 border border-solid border-calzate-300 rounded text-calzate-200 opacity-75 hover:opacity-100' id="navbar-toggle" aria-label='menu'>
               <FontAwesomeIcon icon={ faBars } />
             </button>
           </div>
         </div>
 
         <NavBar mobileOpen={isOpen} />
-        <LoginNavBar />
+        <LoginNavBar itemsInCart={totalItemsInCart} />
 
       </div>
     </header>
