@@ -22,7 +22,7 @@ const Header = () => {
 
         <div className='flex justify-between item-center'>
           <a href="index.html" className="flex items-center flex-shrink-0">
-            <img src={logo} className="border rounded-full object-contain h-12 md:h-16" alt="logo" />
+            <img src={logo} className="border rounded-full object-contain h-12 w-12 md:h-16 md:w-16" alt="logo" />
             <span className="font-semibold text-xl tracking-tight mx-2">Calzate</span>
           </a>
           <div className='flex justify-between my-auto w-20 md:hidden'>
