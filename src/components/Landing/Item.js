@@ -44,10 +44,10 @@ const Item = ({item}) => {
   }
 
   return (
-    <div className="w-48 md:w-60 2xl:w-72 mt-4 mx-auto bg-white flex flex-col overflow-hidden group">
+    <div className="w-44 md:w-60 2xl:w-72 mt-4 mx-auto bg-white flex flex-col overflow-hidden group">
       <a href="#">
         <div className="relative border-b border-black overflow-hidden">
-          <img className="w-48 h-48 md:w-60 md:h-60 2xl:w-72 2xl:h-72 object-cover mx-auto group-hover:scale-[1.1] transition-all delay-100" src={item.imgUrl} alt={item.title} />
+          <img className="w-44 h-44 md:w-60 md:h-60 2xl:w-72 2xl:h-72 object-cover mx-auto group-hover:scale-[1.1] transition-all delay-100" src={item.imgUrl} alt={item.title} />
           <button className='absolute w-10 h-10 rounded-full right-2 top-2 bg-calzate-400 hover:bg-calzate-500'>
             <FontAwesomeIcon onClick={clickHeart} icon={heartClicked ? faHeart : regularHeart} className='align-middle h-8 w-8 text-calzate-900 z-10' />
           </button>        
