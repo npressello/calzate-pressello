@@ -1,4 +1,4 @@
-import heroUrl from '../../assets/images/hero-ad.jpg';
+import heroUrl from '../../../assets/images/hero-ad.jpg';
 
 const Hero = () => {
 

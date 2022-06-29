@@ -33,7 +33,7 @@ const ItemList = (prop) => {
     return img;
   }
 
-  const images = importAll(require.context('../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
+  const images = importAll(require.context('../../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
 
   return(
     <div className="container mx-auto gap-x-0.5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">

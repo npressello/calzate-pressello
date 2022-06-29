@@ -1,7 +1,5 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
-import image from '../../assets/images/products/00.jpg';
-import { useEffect } from "react";
 
 const ItemListContainer = (props) => {
   const [itemsToAdd, setItemsToAdd] = useState(0);
