@@ -1,5 +1,6 @@
 import Item from "./Item";
 import { useEffect, useState } from "react";
+import ItemSkeleton from "./ItemSkeleton";
 
 const ItemList = (prop) => {
   const [productCat, setCategory] = useState(prop.productCat);
@@ -37,7 +38,10 @@ const ItemList = (prop) => {
 
   return(
     <div className="container mx-auto gap-x-0.5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-      {products.map((prod, index) => <Item key={index} item={prod} />)}
+      { products.length < 1 ?
+      [...Array(10)].map((e, i) => <ItemSkeleton key={i} />) :
+      products.map((prod, index) => <Item key={index} item={prod} />)
+      }
     </div>
   );
 }
