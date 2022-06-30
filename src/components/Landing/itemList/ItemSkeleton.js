@@ -3,7 +3,7 @@
 const ItemSkeleton = () => {
 
   return(
-    <div className="relative w-44 md:w-60 2xl:w-72 mt-4 mx-auto bg-neutral-700 flex flex-col">
+    <div className="relative w-44 md:w-60 2xl:w-72 mt-4 mx-auto bg-neutral-500 flex flex-col">
       <div className="w-44 h-44 md:w-60 md:h-60 2xl:w-72 2xl:h-72 border border-white bg-neutral-600">
       </div>
       <div className="relative my-4 mx-4">
