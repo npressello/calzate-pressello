@@ -5,12 +5,13 @@ import ItemListContainer from './components/Landing/itemList/ItemListContainer';
 import ItemDetailContainer from './components/Landing/itemDetail/ItemDetailContainer';
 
 function App() {
+
   return (
     <div className=''>
       <Header />
-      <Hero />
-      <ItemListContainer />
-      <ItemDetailContainer />
+      <ItemDetailContainer id='00' />
+      <Hero />      
+      <ItemListContainer />      
     </div>
   );
 }

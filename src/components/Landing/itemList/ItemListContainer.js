@@ -11,7 +11,7 @@ const ItemListContainer = (props) => {
 
   return(
     <div className="container items-center mx-auto mt-10 text-center">
-      <ItemList productCat="all" />
+      <ItemList productCat="all" imgUrls={props.imgUrls} />
     </div>
   );  
 }

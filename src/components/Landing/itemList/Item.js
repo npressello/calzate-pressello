@@ -10,35 +10,19 @@ const Item = ({item}) => {
     setHeartClicked(!heartClicked);
   };
 
-  const convertColor = (color) => {
-    switch (color) {
-      case "gris":
-        return "bg-stone-500";
-      case "azul":
-        return "bg-blue-500";
-      case "negro":
-        return "bg-black";
-      case "naranja":
-        return "bg-orange-500";
-      case "amarillo":
-        return "bg-yellow-500";
-      case "rojo":
-        return "bg-red-500";
-      case "verde":
-        return "bg-green-500";
-      case "cielo":
-        return "bg-sky-500";
-      case "violeta":
-        return "bg-violet-500";
-      case "rosa":
-        return "bg-pink-500";
-      case "purpura":
-        return "bg-purple-500";
-      case "lima":
-        return "bg-lime-500";
-      default:
-        return "bg-black";
-    }
+  const color = {
+    "gris" : "bg-stone-500",
+    "azul" : "bg-blue-500",
+    "negro" : "bg-black",
+    "naranja" : "bg-orange-500",
+    "amarillo" : "bg-yellow-500",
+    "rojo" : "bg-red-500",
+    "verde" : "bg-green-500",
+    "cielo" : "bg-sky-500",
+    "violeta" : "bg-violet-500",
+    "rosa" : "bg-pink-500",
+    "purpura" : "bg-purple-500",
+    "lima" : "bg-lime-500",
   }
 
   return (
@@ -56,7 +40,7 @@ const Item = ({item}) => {
           <span className="absolute right-0 -top-8 shadow-xl p-1 border border-neutral-600 rounded-md font-bold text-xl tracking-wide text-right text-calzate-900 bg-calzate-400">${item.price}</span>
           <p className='mt-4 italic'>Colores disponibles: </p>
           <ul className='flex'>
-            {item.color.map((c, index) => <li key={index} className={`${convertColor(c)} rounded-full w-4 h-4 mr-1`}></li>)}
+            {item.color.map((c, index) => <li key={index} className={`${color[c]} rounded-full w-4 h-4 mr-1`}></li>)}
           </ul>
         </div>
       </a>
