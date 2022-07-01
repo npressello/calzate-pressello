@@ -18,20 +18,21 @@ const ItemDetail = ({ item }) => {
   }
 
   return(
-    <div className=" mx-auto mt-10 text-center flex md:flex-row">
-      <div>
-        <img src={ item.imgUrl } alt={ item.title } />
+    <div className="container font-roboto mx-auto mt-10 flex md:flex-row">
+      <div className='ml-auto mr-10'>
+        <img className='w-96 h-96 object-cover' src={ item.imgUrl } alt={ item.title } />
       </div>
-      <div>
-        <h1>{ item.brand } - { item.title }</h1>
-        <span>SKU: 12341241241</span>
+      <div className='mr-auto'>
+        <h1 className='text-xl font-bold tracking-widest'>{ item.brand } - { item.title }</h1>
+        <p>{ item.description }</p>
+        <span className='text-xs'>SKU: { item.sku }</span>
         <h2>$ { item.price }</h2>
         <h3>Talle:</h3>
-        <ul>
+        <ul className='flex'>
           { item.size.map((shoeSize, index) => <li key={index} className='rounded-full w-4 h-4 mr-1'>{ shoeSize }</li>) }
         </ul>
         <h3>Color:</h3>
-        <ul>
+        <ul className='flex'>
           { item.color.map((c, index) => <li key={index} className={`${ color[c] } rounded-full w-4 h-4 mr-1`}></li>) }
         </ul>
         <h3>Stock: <span>{ item.stock } unidades</span></h3>

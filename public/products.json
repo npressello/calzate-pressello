@@ -1,6 +1,7 @@
 [
   {
     "id": "00",
+    "sku": "2022063000",
     "brand": "Nike",
     "title": "Max F4",
     "description": "Zapatillas Nike elegante para hombre",
@@ -14,6 +15,7 @@
   },
   {
     "id": "01",
+    "sku": "2022063001",
     "brand": "Nike",
     "title": "Runner Z8",
     "description": "Zapatillas Nike deportivas para hombre y mujer",
@@ -27,6 +29,7 @@
   },
   {
     "id": "02",
+    "sku": "2022063002",
     "brand": "Andina",
     "title": "Terrain",
     "description": "Zapatillas Andina deportivas para Mujer",
@@ -40,6 +43,7 @@
   },
   {
     "id": "03",
+    "sku": "2022063003",
     "brand": "Scandinavian",
     "title": "Street Blue",
     "description": "Zapatillas Scandinavian deportivas para hombre",
@@ -53,6 +57,7 @@
   },
   {
     "id": "04",
+    "sku": "2022063004",
     "brand": "Nike",
     "title": "Runner X8",
     "description": "Zapatillas Nike deportivas para hombre y mujer",
@@ -66,6 +71,7 @@
   },
   {
     "id": "05",
+    "sku": "2022063005",
     "brand": "Stone",
     "title": "Deluxe",
     "description": "Zapatillas Stone urbanas para mujer",
@@ -79,6 +85,7 @@
   },
   {
     "id": "06",
+    "sku": "2022063006",
     "brand": "Nike",
     "title": "Jumper",
     "description": "Zapatillas Nike deportivas para hombre",
@@ -92,6 +99,7 @@
   },
   {
     "id": "07",
+    "sku": "2022063007",
     "brand": "Hummel",
     "title": "Soccer5",
     "description": "Zapatillas Hummel deportivas para hombre",
@@ -105,6 +113,7 @@
   },
   {
     "id": "08",
+    "sku": "2022063008",
     "brand": "Triumph",
     "title": "Isofit",
     "description": "Zapatillas Triumph deportivas para hombre y mujer",
@@ -118,6 +127,7 @@
   },
   {
     "id": "09",
+    "sku": "2022063009",
     "brand": "Nike",
     "title": "Street Dodge",
     "description": "Zapatillas Nike urbanas para mujer",
@@ -131,6 +141,7 @@
   },
   {
     "id": "10",
+    "sku": "2022063010",
     "brand": "Converse",
     "title": "Chuck Jaylor",
     "description": "Zapatillas Converse urbanas para hombre y mujer",
@@ -144,6 +155,7 @@
   },
   {
     "id": "11",
+    "sku": "2022063011",
     "brand": "Asterix",
     "title": "Rose Step",
     "description": "Zapatillas Asterix elegante para mujer",
@@ -157,6 +169,7 @@
   },
   {
     "id": "12",
+    "sku": "2022063012",
     "brand": "Nike",
     "title": "Wimbledom",
     "description": "Zapatillas Nike deportivas para hombre y mujer",
@@ -170,6 +183,7 @@
   },
   {
     "id": "13",
+    "sku": "2022063013",
     "brand": "Reebook",
     "title": "RuidRide",
     "description": "Zapatillas Reebook deportivas para hombre",
@@ -183,6 +197,7 @@
   },
   {
     "id": "14",
+    "sku": "2022063014",
     "brand": "Nike",
     "title": "Free Fire",
     "description": "Zapatillas Nike elegante para hombre",
@@ -196,6 +211,7 @@
   },
   {
     "id": "15",
+    "sku": "2022063015",
     "brand": "Diador",
     "title": "Falcon",
     "description": "Zapatillas Diador deportivas para hombre",
@@ -209,6 +225,7 @@
   },
   {
     "id": "16",
+    "sku": "2022063016",
     "brand": "Diador",
     "title": "Transcend",
     "description": "Zapatillas Diador elegante para mujer",
@@ -222,6 +239,7 @@
   },
   {
     "id": "17",
+    "sku": "2022063017",
     "brand": "Trovald",
     "title": "Pacemaker",
     "description": "Zapatillas Trovald urbanas para hombre",
