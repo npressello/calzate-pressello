@@ -39,7 +39,7 @@ const ItemCount = (props) => {
   };
 
   return(
-    <div className="my-4 mx-auto items-center text-center bg-neutral-100 w-fit p-2">
+    <div className="items-center text-center bg-neutral-100 w-fit p-2">
       <div className='mr-auto border-2 border-neutral-400 rounded p-1 w-40 bg-white'>
         <button onClick={substractNumber} className='w-8 h-8 rounded hover:bg-neutral-100 disabled:bg-neutral-200' disabled={substractBtnDisabled}>
           <FontAwesomeIcon className='text-lg text-calzate-300' icon={ faMinus } />

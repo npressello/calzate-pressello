@@ -18,7 +18,6 @@ const ItemDetailContainer = (props) => {
       let prod = data.filter((el) => el.id === id)[0];
       prod.imgUrl = images[prod.imgUrl];
       setProduct(prod);
-      console.log(product);
     })
     .catch(err => console.log(err))
     .finally(() => setLoaded(true))
