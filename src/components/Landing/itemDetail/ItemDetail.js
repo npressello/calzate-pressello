@@ -51,7 +51,7 @@ const ItemDetail = ({ item }) => {
             </ul>            
           </div>
           <div className='md:mt-3'>
-            <h3 className='md:mt-3'>Stock: <span>{ item.stock } unidades</span></h3>
+            <h3 className='md:mt-3'>Stock: <span>{ item.stock } { item.stock === 1 ? 'unidad' : 'unidades'}</span></h3>
             <ItemCount initial={1} stock={ item.stock } />
           </div>
         </div>        
