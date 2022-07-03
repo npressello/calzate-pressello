@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Hero from "./Hero";
 import ItemList from "./ItemList";
 
 const ItemListContainer = (props) => {
@@ -10,9 +11,12 @@ const ItemListContainer = (props) => {
   };  
 
   return(
-    <div className="container items-center mx-auto mt-10 text-center">
-      <ItemList productCat="all" imgUrls={props.imgUrls} />
-    </div>
+    <>
+      <Hero />
+      <div className="container items-center mx-auto mt-10 text-center">
+        <ItemList productCat="all" imgUrls={props.imgUrls} />
+      </div>
+    </>
   );  
 }
 

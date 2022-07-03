@@ -1,18 +1,20 @@
 import './App.css';
 import Header from './components/header/Header';
-import Hero from './components/Landing/itemList/Hero';
 import ItemListContainer from './components/Landing/itemList/ItemListContainer';
 import ItemDetailContainer from './components/Landing/itemDetail/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
 
   return (
-    <div className=''>
+    <BrowserRouter>
       <Header />
-      <ItemDetailContainer id='00' />
-      <Hero />      
-      <ItemListContainer />      
-    </div>
+      <Routes>        
+        <Route exact path="/" element={<ItemListContainer />} />
+        <Route exact path="/category/:id" element={<ItemListContainer />} />
+        <Route exact path="/item/:id" element={<ItemDetailContainer />} />              
+      </Routes>
+    </BrowserRouter>
   );
 }
 
