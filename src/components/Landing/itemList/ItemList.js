@@ -7,6 +7,13 @@ const ItemList = (prop) => {
   const [products, setProducts] = useState([]);
   const [loaded, setLoaded] = useState(false);
 
+  const cat = [
+    {id: '0', name: 'todos'},
+    {id: '1', name: 'hombre'},
+    {id: '2', name: 'mujer'},
+    {id: '3', name: 'marcas'}
+  ]
+
   const getProductsData = () => {
     fetch('products.json', {
       headers: { 
@@ -38,7 +45,15 @@ const ItemList = (prop) => {
     return img;
   }
 
+  const importProducts = (r) => {
+    let prodUrl = {};
+    r.keys().map((p, index) => {prodUrl[index] = r(p);});
+    console.log(r(r.keys()[0]));
+    return prodUrl;
+  }
+
   const images = importAll(require.context('../../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
+  const productsUrl = importProducts(require.context('../../../data', false, /\.(json)$/));
 
   return(
     <div className="container mx-auto gap-x-0.5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
