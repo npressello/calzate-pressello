@@ -30,7 +30,7 @@ const ItemDetail = ({ item }) => {
 
   return(
     <div className="container font-roboto mx-auto my-10 flex flex-col md:flex-row">
-      <div className='ml-auto mr-auto md:mr-10 p-10 md:border md:border-neutral-400'>
+      <div className='ml-auto mr-auto md:mr-10 md:p-10 md:border md:border-neutral-400'>
         <img className='w-96 h-96 object-cover' src={ item.imgUrl } alt={ item.title } />
       </div>
       <div className='text-center md:text-left md:ml-2 md:mr-auto'>
