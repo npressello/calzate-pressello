@@ -10,8 +10,8 @@ const ItemCount = (props) => {
   const [addBtnDisabled, setAddBtnDisabled] = useState(false);
 
   const addItemToCart = () => {
-    if (props.stock >= itemQuantity)
-      props.onAdd(itemQuantity);
+    if (props.stock >= itemQuantity) return;
+      /*props.onAdd(itemQuantity);*/
   };
 
   const addNumber = () => {
