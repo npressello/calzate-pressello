@@ -8,7 +8,7 @@ const ItemListContainer = (props) => {
   const [loaded, setLoaded] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([]);
 
-  const { id } = useParams(); 
+  const { categoryId } = useParams(); 
 
   const cat = [
     {id: '0', name: 'todos'},
@@ -48,9 +48,9 @@ const ItemListContainer = (props) => {
   useEffect(() => {
     setLoaded(false);
     setTimeout(() => {
-      getProductsData(id);      
+      getProductsData(categoryId);      
     }, 2000);  
-  }, [id]);
+  }, [categoryId]);
 
   // Temporal way to load the dynamics urls of the products' images
   const importAll = (r) => {
