@@ -35,7 +35,7 @@ const Header = () => {
           </div>
         </div>
 
-        <NavBar mobileOpen={isOpen} />
+        <NavBar mobileOpen={isOpen} toggleSelf={toggleMobileNavbar} />
         <LoginNavBar itemsInCart={totalItemsInCart} />
 
       </div>
