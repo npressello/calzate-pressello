@@ -40,7 +40,7 @@ const ItemDetail = ({ item }) => {
         <p className='text-xs'>SKU: { item.sku }</p>
         <h2 className='my-5 font-semibold text-2xl'>$ { item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") },00</h2>
         <div className='flex mb-6 md:block justify-around '>
-          <div className=''>
+          <div className='w-1/2 sm:w-auto'>
             <h3>Talle:</h3>
             <ul className='flex'>
               { item.size.map((shoeSize, index) => <li onClick={() => {sizeClicked(index)}} role='button' key={index} className={`${index === sizeIndexClicked ? 'border-calzate-300 border-2 w-7 h-7' : 'border-neutral-700 w-6 h-6'} bg-neutral-100 border rounded-full  mr-1 text-center align-middle`}>{ shoeSize }</li>) }
@@ -50,7 +50,7 @@ const ItemDetail = ({ item }) => {
               { item.color.map((c, index) => <li onClick={() => {colorClicked(index)}} role='button' key={index} className={`${ color[c] } ${index === colorIndexClicked ? 'border-calzate-300 border-2 w-7 h-7' : 'border-neutral-700'} rounded-full w-6 h-6 mr-1`}></li>) }
             </ul>            
           </div>
-          <div className='md:mt-3'>
+          <div className='w-1/2 sm:w-auto md:mt-3'>
             <h3 className='md:mt-3'>Stock: <span>{ item.stock } { item.stock === 1 ? 'unidad' : 'unidades'}</span></h3>
             <ItemCount initial={1} stock={ item.stock } />
           </div>
