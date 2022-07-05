@@ -11,8 +11,8 @@ const ItemListContainer = (props) => {
   const { categoryId } = useParams(); 
 
   const getProductsByCategory = (data, catId) => {
-    if (catId === undefined || (catId !== '1' && catId !== '2')) return data;
-    const gender = catId === '1' ? 'hombre' : 'mujer';
+    if (catId === undefined || (catId !== 'hombre' && catId !== 'mujer')) return data;
+    const gender = catId;
     let prods = {};
     prods = data.filter((item) => item.gender === gender || item.gender === 'unisex');
     return prods;
