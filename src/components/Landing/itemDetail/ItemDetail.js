@@ -43,7 +43,7 @@ const ItemDetail = ({ item }) => {
           <div className='w-1/2 sm:w-auto'>
             <h3>Talle:</h3>
             <ul className='flex flex-wrap'>
-              { item.size.map((shoeSize, index) => <li onClick={() => {sizeClicked(index)}} role='button' key={index} className={`${index === sizeIndexClicked ? 'border-calzate-300 border-2 w-7 h-7' : 'border-neutral-700 w-6 h-6'} bg-neutral-100 border rounded-full  mr-1 text-center align-middle`}>{ shoeSize }</li>) }
+              { item.size.map((shoeSize, index) => <li onClick={() => {sizeClicked(index)}} role='button' key={index} className={`${index === sizeIndexClicked ? 'border-calzate-300 border-2 w-7 h-7' : 'border-neutral-700 w-6 h-6'} bg-neutral-100 border rounded-full  mr-1 mb-1 text-center align-middle`}>{ shoeSize }</li>) }
             </ul>
             <h3 className='mt-3'>Color:</h3>
             <ul className='flex flex-wrap'>
