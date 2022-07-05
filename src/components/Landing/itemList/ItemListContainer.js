@@ -10,13 +10,6 @@ const ItemListContainer = (props) => {
 
   const { categoryId } = useParams(); 
 
-  const cat = [
-    {id: '0', name: 'todos'},
-    {id: '1', name: 'hombre'},
-    {id: '2', name: 'mujer'},
-    {id: '3', name: 'marcas'}
-  ]
-
   const getProductsByCategory = (data, catId) => {
     if (catId === undefined || (catId !== '1' && catId !== '2')) return data;
     const gender = catId === '1' ? 'hombre' : 'mujer';
@@ -59,10 +52,7 @@ const ItemListContainer = (props) => {
     return img;
   }
 
-  const images = importAll(require.context('../../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
-
-  
-  
+  const images = importAll(require.context('../../../assets/images/products', false, /\.(png|jpe?g|svg)$/));  
 
   return(
     <>

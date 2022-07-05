@@ -1,13 +1,15 @@
 import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = (props) => {
-  const [id, setId] = useState(props.id);
   const [product, setProduct] = useState({});
   const [loaded, setLoaded] = useState(false);
 
+  const { id } = useParams();
+
   const getProductData = () => {
-    fetch('products.json', {
+    fetch('../../products.json', {
       headers: { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
