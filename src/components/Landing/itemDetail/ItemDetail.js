@@ -39,14 +39,14 @@ const ItemDetail = ({ item }) => {
         <p className='my-1 text-xs'>Categorías: { item.gender }, { item.brand }</p>
         <p className='text-xs'>SKU: { item.sku }</p>
         <h2 className='my-5 font-semibold text-2xl'>$ { item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") },00</h2>
-        <div className='flex mb-6 md:block justify-around '>
+        <div className='flex mb-6 mx-2 md:mx-0 md:block justify-around '>
           <div className='w-1/2 sm:w-auto'>
             <h3>Talle:</h3>
-            <ul className='flex'>
+            <ul className='flex flex-wrap'>
               { item.size.map((shoeSize, index) => <li onClick={() => {sizeClicked(index)}} role='button' key={index} className={`${index === sizeIndexClicked ? 'border-calzate-300 border-2 w-7 h-7' : 'border-neutral-700 w-6 h-6'} bg-neutral-100 border rounded-full  mr-1 text-center align-middle`}>{ shoeSize }</li>) }
             </ul>
             <h3 className='mt-3'>Color:</h3>
-            <ul className='flex'>
+            <ul className='flex flex-wrap'>
               { item.color.map((c, index) => <li onClick={() => {colorClicked(index)}} role='button' key={index} className={`${ color[c] } ${index === colorIndexClicked ? 'border-calzate-300 border-2 w-7 h-7' : 'border-neutral-700'} rounded-full w-6 h-6 mr-1`}></li>) }
             </ul>            
           </div>
