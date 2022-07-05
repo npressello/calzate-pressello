@@ -1,4 +1,5 @@
 import ItemDetail from "./ItemDetail";
+import ItemDetailSkeleton from "./ItemDetailSkeleton";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -41,8 +42,8 @@ const ItemDetailContainer = (props) => {
   const images = importAll(require.context('../../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
 
   return(
-    <div className="container mx-auto flex">
-      { loaded ? <ItemDetail item={ product } /> : <h1>CARGANDO</h1> }      
+    <div className="container mx-auto flex flex-col">
+      { loaded ? <ItemDetail item={ product } /> : <ItemDetailSkeleton /> }          
     </div>
   );
 }
