@@ -18,6 +18,8 @@ const Header = () => {
     });
   }
 
+  const closeMobileNavbar = () => setIsOpen("hidden");
+
   return(
     <header className="shadow-md py-1 md:py-2 bg-white">
       <div className='container px-4 mx-auto md:flex md:items-center'>
@@ -35,7 +37,7 @@ const Header = () => {
           </div>
         </div>
 
-        <NavBar mobileOpen={isOpen} toggleSelf={toggleMobileNavbar} />
+        <NavBar mobileOpen={isOpen} toggleSelf={closeMobileNavbar} />
         <LoginNavBar itemsInCart={totalItemsInCart} />
 
       </div>
