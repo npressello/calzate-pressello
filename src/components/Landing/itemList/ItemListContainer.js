@@ -52,13 +52,6 @@ const ItemListContainer = (props) => {
     }, 2000);  
   }, [id]);
 
-  /* useEffect(() => {
-    
-    setTimeout(() => {
-      setSelectedProducts(getProductsByCategory(products, id));
-    }, 2000);
-  }, [products, id]); */
-
   // Temporal way to load the dynamics urls of the products' images
   const importAll = (r) => {
     let img = {};
