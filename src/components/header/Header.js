@@ -23,7 +23,7 @@ const Header = () => {
       <div className='container px-4 mx-auto md:flex md:items-center'>
 
         <div className='flex justify-between item-center'>
-          <Link exact to={'/'} className="flex items-center flex-shrink-0">
+          <Link exact='true' to={'/'} className="flex items-center flex-shrink-0">
             <img src={logo} className="border rounded-full object-contain h-12 w-12 md:h-16 md:w-16" alt="logo" />
             <span className="font-semibold text-xl tracking-tight mx-2">Calzate</span>
           </Link>
