@@ -1,8 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
-import { useParams } from "react-router";
 
 const NavBar = (props) => {
-  const cat = [ 'todos', 'hombre', 'mujer'/*, 'marcas'*/ ]
+  const cat = [ 'todos', 'hombre', 'mujer'/* TODO: , 'marcas'*/ ]
   
   return (
     <>
