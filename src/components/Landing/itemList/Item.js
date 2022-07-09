@@ -31,7 +31,7 @@ const Item = ({item}) => {
       <button className={`absolute w-10 h-10 rounded-full right-2 top-2 bg-calzate-900 hover:bg-calzate-800 z-10 ${heartClicked ? 'opacity-100' : 'opacity-50'}`} aria-label='favorite'>
         <FontAwesomeIcon onClick={clickHeart} icon={heartClicked ? faHeart : regularHeart} className='align-middle h-5 w-5 text-calzate-300 z-10' />
       </button>
-      <Link exact='true' to={`/item/${item.id}`} href="#">
+      <Link exact='true' to={`/item/${item.id}`}>
         <div className="border-b border-black overflow-hidden">
           <img className="w-44 h-44 md:w-60 md:h-60 2xl:w-72 2xl:h-72 object-cover mx-auto md:group-hover:scale-[1.1] transition-all delay-100" src={item.imgUrl} alt={item.title} />
         </div>
