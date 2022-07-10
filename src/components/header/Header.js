@@ -20,6 +20,10 @@ const Header = () => {
 
   const closeMobileNavbar = () => setIsOpen("hidden");
 
+  const addItemsToCart = (itemsToAdd) => {
+    setTotalItemsInCart(totalItemsInCart+itemsToAdd);
+  }
+
   return(
     <header className="shadow-md py-1 md:py-2 bg-white">
       <div className='container px-4 mx-auto md:flex md:items-center'>

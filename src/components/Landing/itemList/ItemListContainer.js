@@ -4,7 +4,6 @@ import Hero from "./Hero";
 import ItemList from "./ItemList";
 
 const ItemListContainer = (props) => {  
-  const [products, setProducts] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([]);
 
@@ -31,7 +30,6 @@ const ItemListContainer = (props) => {
       data.forEach(element => {
         element.imgUrl = images[element.imgUrl];
       });
-      setProducts(data);
       setSelectedProducts(getProductsByCategory(data, id));
     })
     .catch(err => console.log(err))
