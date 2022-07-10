@@ -29,7 +29,7 @@ const Header = ({ itemOnCart }) => {
             <span className="font-semibold text-xl tracking-tight mx-2">Calzate</span>
           </Link>
           <div className='flex justify-between my-auto w-20 md:hidden'>
-            <CartWidget itemsInCart={itemOnCart} />
+            <Link exact='true' to={'/cart'}><CartWidget itemsInCart={itemOnCart} /></Link>
             <button onClick={toggleMobileNavbar} className='h-8 w-8 border border-solid border-calzate-300 rounded text-calzate-200 opacity-75 hover:opacity-100' id="navbar-toggle" aria-label='menu'>
               <FontAwesomeIcon icon={ faBars } />
             </button>
