@@ -9,6 +9,10 @@ const ItemDetailContainer = (props) => {
 
   const { id } = useParams();
 
+  const addToCart = (itemQuantity, item, sizeIndexClicked, colorIndexClicked) => {
+    props.addItemToCart(itemQuantity, item, sizeIndexClicked, colorIndexClicked);
+  }
+
   const getProductData = () => {
     fetch('../../products.json', {
       headers: { 
@@ -43,7 +47,7 @@ const ItemDetailContainer = (props) => {
 
   return(
     <div className="container mx-auto flex flex-col">
-      { loaded ? <ItemDetail item={ product } /> : <ItemDetailSkeleton /> }          
+      { loaded ? <ItemDetail addItemToCart={addToCart} item={ product } /> : <ItemDetailSkeleton /> }          
     </div>
   );
 }

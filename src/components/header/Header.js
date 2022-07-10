@@ -4,12 +4,11 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import NavBar from './NavBar';
 import LoginNavBar from './LoginNavBar';
 import CartWidget from './CartWidget';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ itemOnCart }) => {
   const [isOpen, setIsOpen] = useState("hidden");
-  const [totalItemsInCart, setTotalItemsInCart] = useState(0);
   
   const toggleMobileNavbar = () => {
     setIsOpen((prevValue) => {
@@ -19,10 +18,6 @@ const Header = () => {
   }
 
   const closeMobileNavbar = () => setIsOpen("hidden");
-
-  const addItemsToCart = (itemsToAdd) => {
-    setTotalItemsInCart(totalItemsInCart+itemsToAdd);
-  }
 
   return(
     <header className="shadow-md py-1 md:py-2 bg-white">
@@ -34,7 +29,7 @@ const Header = () => {
             <span className="font-semibold text-xl tracking-tight mx-2">Calzate</span>
           </Link>
           <div className='flex justify-between my-auto w-20 md:hidden'>
-            <CartWidget itemsInCart={totalItemsInCart} />
+            <CartWidget itemsInCart={itemOnCart} />
             <button onClick={toggleMobileNavbar} className='h-8 w-8 border border-solid border-calzate-300 rounded text-calzate-200 opacity-75 hover:opacity-100' id="navbar-toggle" aria-label='menu'>
               <FontAwesomeIcon icon={ faBars } />
             </button>
@@ -42,7 +37,7 @@ const Header = () => {
         </div>
 
         <NavBar mobileOpen={isOpen} toggleSelf={closeMobileNavbar} />
-        <LoginNavBar itemsInCart={totalItemsInCart} />
+        <LoginNavBar itemsInCart={itemOnCart} />
 
       </div>
     </header>

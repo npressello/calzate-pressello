@@ -1,9 +1,11 @@
 import ItemCount from './ItemCount';
 import { useState } from 'react';
+import GoToCart from './GoToCart';
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, addItemToCart }) => {
   const [sizeIndexClicked, setSizeIndexClicked] = useState(0);
   const [colorIndexClicked, setColorIndexClicked] = useState(0);
+  const [addedToCart, setAddedToCart] = useState(false);
 
   const sizeClicked = (index) => {
     setSizeIndexClicked(index);
@@ -12,6 +14,11 @@ const ItemDetail = ({ item }) => {
   const colorClicked = (index) => {
     setColorIndexClicked(index);
   };
+
+  const onAddItem = (itemQuantity) => {
+    addItemToCart(itemQuantity, item, sizeIndexClicked, colorIndexClicked);
+    setAddedToCart(true);
+  }
 
   const color = {
     "gris" : "bg-stone-500",
@@ -52,7 +59,7 @@ const ItemDetail = ({ item }) => {
           </div>
           <div className='w-1/2 sm:w-auto md:mt-3'>
             <h3 className='md:mt-3'>Stock: <span>{ item.stock } { item.stock === 1 ? 'unidad' : 'unidades'}</span></h3>
-            <ItemCount initial={1} stock={ item.stock } />
+            {addedToCart ? <GoToCart /> : <ItemCount onAdd={onAddItem} initial={1} stock={ item.stock } />}            
           </div>
         </div>        
       </div>
