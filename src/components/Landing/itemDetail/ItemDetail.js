@@ -22,7 +22,7 @@ const ItemDetail = ({ item, addItemToCart }) => {
     setAddedToCart(true);
 
     // Esto es algo extra que hice para visualizar el nuevo valor en el icono del carrito en CartWidget
-    addItemToCart(itemQuantity, item, sizeIndexClicked, colorIndexClicked);    
+    addItemToCart(quantity, item, sizeIndexClicked, colorIndexClicked);    
   }
 
   const color = {
