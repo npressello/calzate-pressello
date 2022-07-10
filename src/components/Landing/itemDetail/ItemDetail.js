@@ -5,6 +5,7 @@ import GoToCart from './GoToCart';
 const ItemDetail = ({ item, addItemToCart }) => {
   const [sizeIndexClicked, setSizeIndexClicked] = useState(0);
   const [colorIndexClicked, setColorIndexClicked] = useState(0);
+  const [itemQuantity, setItemQuantity] = useState(0);
   const [addedToCart, setAddedToCart] = useState(false);
 
   const sizeClicked = (index) => {
@@ -15,9 +16,13 @@ const ItemDetail = ({ item, addItemToCart }) => {
     setColorIndexClicked(index);
   };
 
-  const onAddItem = (itemQuantity) => {
-    addItemToCart(itemQuantity, item, sizeIndexClicked, colorIndexClicked);
+  const onAddItem = (quantity) => {
+    // Las siguientes dos lineas son para el desafio
+    setItemQuantity(itemQuantity+quantity);
     setAddedToCart(true);
+
+    // Esto es algo extra que hice para visualizar el nuevo valor en el icono del carrito en CartWidget
+    addItemToCart(itemQuantity, item, sizeIndexClicked, colorIndexClicked);    
   }
 
   const color = {
