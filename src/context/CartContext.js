@@ -9,7 +9,7 @@ const CustomProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
 
   const addItem = (item, sizeIndex, colorIndex, quantity) => {
-    if (!isInCart(item.id)) return;
+    if (isInCart(item.id)) return;
     setProducts([...products, { 'item': item, 'size': sizeIndex, 'color': colorIndex, 'quantity': quantity }]);
   }
 
@@ -33,8 +33,10 @@ const CustomProvider = ({ children }) => {
     );
   }
 
+  console.log(products);
+
   return (
-    <Provider value={{ products, addItem, removeItem, clear, getQuantity }} >
+    <Provider value={{ products, addItem, removeItem, clear, isInCart, getQuantity }} >
       {children}
     </Provider>
   )

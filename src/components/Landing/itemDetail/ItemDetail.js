@@ -1,13 +1,16 @@
-import ItemCount from './ItemCount';
-import { useState, useContext } from 'react';
-import GoToCart from './GoToCart';
 import { context } from '../../../context/CartContext';
+import { useState, useContext } from 'react';
+import ItemCount from './ItemCount';
+import GoToCart from './GoToCart';
 
-const ItemDetail = ({ item, addItemToCart }) => {
+
+
+const ItemDetail = ({ item }) => {
+  const { addItem, removeItem, isInCart } = useContext(context);
+
   const [sizeIndexClicked, setSizeIndexClicked] = useState(0);
   const [colorIndexClicked, setColorIndexClicked] = useState(0);
-  const [itemQuantity, setItemQuantity] = useState(0);
-  const [addedToCart, setAddedToCart] = useState(false);
+  const [addedToCart, setAddedToCart] = useState(isInCart(item.id));
 
   const sizeClicked = (index) => {
     setSizeIndexClicked(index);
@@ -18,12 +21,13 @@ const ItemDetail = ({ item, addItemToCart }) => {
   };
 
   const onAddItem = (quantity) => {
-    // Las siguientes dos lineas son para el desafio
-    setItemQuantity(itemQuantity + quantity);
     setAddedToCart(true);
+    addItem(item, sizeIndexClicked, colorIndexClicked, quantity);
+  }
 
-    // Esto es algo extra que hice para visualizar el nuevo valor en el icono del carrito en CartWidget
-    addItemToCart(quantity, item, sizeIndexClicked, colorIndexClicked);
+  const onRemoveItem = () => {
+    removeItem(item.id);
+    setAddedToCart(false);
   }
 
   const color = {
@@ -65,7 +69,7 @@ const ItemDetail = ({ item, addItemToCart }) => {
           </div>
           <div className='w-1/2 sm:w-auto md:mt-3'>
             <h3 className='md:mt-3'>Stock: <span>{item.stock} {item.stock === 1 ? 'unidad' : 'unidades'}</span></h3>
-            {addedToCart ? <GoToCart /> : <ItemCount onAdd={onAddItem} initial={1} stock={item.stock} />}
+            {addedToCart ? <GoToCart onRemove={onRemoveItem} /> : <ItemCount onAdd={onAddItem} initial={1} stock={item.stock} />}
           </div>
         </div>
       </div>
