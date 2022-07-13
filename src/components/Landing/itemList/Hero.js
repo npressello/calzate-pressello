@@ -2,7 +2,7 @@ import heroUrl from '../../../assets/images/hero-ad.jpg';
 
 const Hero = () => {
 
-  return(
+  return (
     <div className='relative mx-auto font-roboto'>
       <img className='h-96 w-full object-none' src={heroUrl} alt="" />
       <span className='absolute italic text-2xl top-10 left-10 md:text-3xl md:top-10 lg:text-4xl lg:left-20 lg:top-20 text-neutral-200 font-bold z-10 opacity-75'>UN PASO A LA VEZ</span>

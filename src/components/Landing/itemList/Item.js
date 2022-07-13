@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { context } from '../../../context/CartContext';
 
-const Item = ({item}) => {
+const Item = ({ item }) => {
+  const { isInCart } = useContext(context);
   const [heartClicked, setHeartClicked] = useState(false);
 
   const clickHeart = () => {
@@ -12,18 +14,18 @@ const Item = ({item}) => {
   };
 
   const color = {
-    "gris" : "bg-stone-500",
-    "azul" : "bg-blue-500",
-    "negro" : "bg-black",
-    "naranja" : "bg-orange-500",
-    "amarillo" : "bg-yellow-500",
-    "rojo" : "bg-red-500",
-    "verde" : "bg-green-500",
-    "cielo" : "bg-sky-500",
-    "violeta" : "bg-violet-500",
-    "rosa" : "bg-pink-500",
-    "purpura" : "bg-purple-500",
-    "lima" : "bg-lime-500",
+    "gris": "bg-stone-500",
+    "azul": "bg-blue-500",
+    "negro": "bg-black",
+    "naranja": "bg-orange-500",
+    "amarillo": "bg-yellow-500",
+    "rojo": "bg-red-500",
+    "verde": "bg-green-500",
+    "cielo": "bg-sky-500",
+    "violeta": "bg-violet-500",
+    "rosa": "bg-pink-500",
+    "purpura": "bg-purple-500",
+    "lima": "bg-lime-500",
   }
 
   return (
@@ -32,8 +34,13 @@ const Item = ({item}) => {
         <FontAwesomeIcon onClick={clickHeart} icon={heartClicked ? faHeart : regularHeart} className='align-middle h-5 w-5 text-calzate-300 z-10' />
       </button>
       <Link exact='true' to={`/item/${item.id}`}>
-        <div className="border-b border-black overflow-hidden">
+        <div className="relative border-b border-black overflow-hidden">
           <img className="w-44 h-44 md:w-60 md:h-60 2xl:w-72 2xl:h-72 object-cover mx-auto md:group-hover:scale-[1.1] transition-all delay-100" src={item.imgUrl} alt={item.title} />
+          {isInCart(item.id) &&
+            <div className='absolute top-1/4 w-full h-1/2 bg-neutral-900 opacity-75 flex items-center'>
+              <h3 className='mx-auto text-neutral-100 text-xl'>AGREGADO AL CARRITO</h3>
+            </div>
+          }
         </div>
         <div className="relative font-roboto my-4 mx-4 text-left">
           <span className="text-base italic">{item.brand}</span>
