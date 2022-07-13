@@ -33,8 +33,6 @@ const CustomProvider = ({ children }) => {
     );
   }
 
-  console.log(products);
-
   return (
     <Provider value={{ products, addItem, removeItem, clear, isInCart, getQuantity }} >
       {children}
