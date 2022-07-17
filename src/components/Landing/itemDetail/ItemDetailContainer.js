@@ -9,25 +9,21 @@ const ItemDetailContainer = (props) => {
 
   const { id } = useParams();
 
-  const addToCart = (itemQuantity, item, sizeIndexClicked, colorIndexClicked) => {
-    props.addItemToCart(itemQuantity, item, sizeIndexClicked, colorIndexClicked);
-  }
-
   const getProductData = () => {
     fetch('../../products.json', {
-      headers: { 
+      headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
     })
-    .then( (resp) => resp.json() )
-    .then( (data) => {      
-      let prod = data.filter((el) => el.id === id)[0];
-      prod.imgUrl = images[prod.imgUrl];
-      setProduct(prod);
-    })
-    .catch(err => console.log(err))
-    .finally(() => setLoaded(true))
+      .then((resp) => resp.json())
+      .then((data) => {
+        let prod = data.filter((el) => el.id === id)[0];
+        prod.imgUrl = images[prod.imgUrl];
+        setProduct(prod);
+      })
+      .catch(err => console.log(err))
+      .finally(() => setLoaded(true))
   };
 
   useEffect(() => {
@@ -45,9 +41,9 @@ const ItemDetailContainer = (props) => {
 
   const images = importAll(require.context('../../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
 
-  return(
+  return (
     <div className="container mx-auto flex flex-col">
-      { loaded ? <ItemDetail addItemToCart={addToCart} item={ product } /> : <ItemDetailSkeleton /> }          
+      {loaded ? <ItemDetail item={product} /> : <ItemDetailSkeleton />}
     </div>
   );
 }
