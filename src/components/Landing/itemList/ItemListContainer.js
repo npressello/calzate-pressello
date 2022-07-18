@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Hero from "./Hero";
 import ItemList from "./ItemList";
+import { db } from "../../firebase/Firebase";
 
 const ItemListContainer = (props) => {  
   const [loaded, setLoaded] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([]);
 
-  const { categoryId } = useParams(); 
+  const { categoryId } = useParams();
+  
+  console.log(db);
 
   const getProductsByCategory = (data, catId) => {
     if (catId === undefined || (catId !== 'hombre' && catId !== 'mujer')) return data;
