@@ -18,7 +18,6 @@ const Cart = () => {
       <h1 className="my-10 underline italic">Carrito de compras</h1>
       <MobileCart products={products} onRemoveItem={onRemoveItem} totalPrice={totalPrice} />
       <DesktopCart products={products} onRemoveItem={onRemoveItem} totalPrice={totalPrice} />
-
       {products.length === 0 && <p className="my-10">No hay productos en el carrito. <Link className="text-lg underline font-roboto font-semibold bg-calzate-400 text-calzate-900 p-2 rounded hover:bg-calzate-300 hover:shadow-lg" exact='true' to={'/'}>Explora la tienda</Link></p>}
     </div >
   );

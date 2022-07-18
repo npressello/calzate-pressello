@@ -27,7 +27,7 @@ const MobileCart = ({ products, onRemoveItem, totalPrice }) => {
       <tbody className="font-roboto">
         {products.map((product, index) =>
           <>
-            <tr className="border-b">
+            <tr key={index} className="border-b">
               <td className="px-2 py-4">
                 <button onClick={() => onToggleDetail(index)} className='text-calzate-500 hover:text-calzate-400 hover:shadow-lg'>
                   <FontAwesomeIcon className="text-xl" icon={index === indexDetailsShowing ? faCircleMinus : faCirclePlus} />
