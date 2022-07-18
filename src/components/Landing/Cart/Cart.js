@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import MobileCart from "./MobileCart";
 
 const Cart = () => {
-  const { products, addItem, removeItem, clear, isInCart, getQuantity } = useContext(context);
+  const { products, removeItem } = useContext(context);
 
   const totalPrice = products.reduce((acc, product) => acc + (product.item.price * product.quantity), 0);
 
