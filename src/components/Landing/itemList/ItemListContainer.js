@@ -3,14 +3,13 @@ import { useParams } from "react-router-dom";
 import Hero from "./Hero";
 import ItemList from "./ItemList";
 import { db } from "../../firebase/Firebase";
+import { collection, getDocs, query } from "firebase/firestore";
 
 const ItemListContainer = (props) => {
   const [loaded, setLoaded] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([]);
 
   const { categoryId } = useParams();
-
-  console.log(db);
 
   const getProductsByCategory = (data, catId) => {
     if (catId === undefined || (catId !== 'hombre' && catId !== 'mujer')) return data;
@@ -40,6 +39,17 @@ const ItemListContainer = (props) => {
   };
 
   useEffect(() => {
+    const productsCollection = collection(db, 'items');
+    getDocs(productsCollection)
+      .then(result => {
+        const data = result.docs.map(doc => {
+          return {
+            id: doc.id, ...doc.data()
+          }
+        });
+        console.log(data);
+      })
+
     setLoaded(false);
     setTimeout(() => {
       getProductsData(categoryId);
