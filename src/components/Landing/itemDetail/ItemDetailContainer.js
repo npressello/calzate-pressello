@@ -2,6 +2,8 @@ import ItemDetail from "./ItemDetail";
 import ItemDetailSkeleton from "./ItemDetailSkeleton";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { db } from "../../firebase/Firebase";
+import { collection, getDocs, query, where, FieldPath, documentId } from "firebase/firestore";
 
 const ItemDetailContainer = (props) => {
   const [product, setProduct] = useState({});
@@ -10,36 +12,18 @@ const ItemDetailContainer = (props) => {
   const { id } = useParams();
 
   const getProductData = () => {
-    fetch('../../products.json', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        let prod = data.filter((el) => el.id === id)[0];
-        prod.imgUrl = images[prod.imgUrl];
-        setProduct(prod);
-      })
+    const q = query(collection(db, 'items'), where('__name__', "==", id));
+    const spanShot = getDocs(q)
+      .then(result =>
+        result.forEach(doc => setProduct({ id: doc.id, ...doc.data() }))
+      )
       .catch(err => console.log(err))
       .finally(() => setLoaded(true))
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      getProductData();
-    }, 2000);
+    getProductData();
   }, [id]);
-
-  // Temporal way to load the dynamics urls of the products' images
-  const importAll = (r) => {
-    let img = {};
-    r.keys().map((item, index) => { img[item.replace('./', '').replace('.jpg', '').replace('.png', '')] = r(item); });
-    return img;
-  }
-
-  const images = importAll(require.context('../../../assets/images/products', false, /\.(png|jpe?g|svg)$/));
 
   return (
     <div className="container mx-auto flex flex-col">
