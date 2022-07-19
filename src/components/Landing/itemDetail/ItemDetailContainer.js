@@ -35,7 +35,7 @@ const ItemDetailContainer = (props) => {
   // Temporal way to load the dynamics urls of the products' images
   const importAll = (r) => {
     let img = {};
-    r.keys().map((item, index) => { img[item.replace('./', '').replace('.jpg', '')] = r(item); });
+    r.keys().map((item, index) => { img[item.replace('./', '').replace('.jpg', '').replace('.png', '')] = r(item); });
     return img;
   }
 
