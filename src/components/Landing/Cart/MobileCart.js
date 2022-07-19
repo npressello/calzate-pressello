@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus, faCircleMinus } from '@fortawesome/free-solid-svg-icons';
-import { useState } from "react";
+import React, { useState } from "react";
 import RemoveFromCart from "../itemDetail/RemoveFromCart";
 import Purcharse from "./Purcharse";
 
@@ -18,15 +18,17 @@ const MobileCart = ({ products, onRemoveItem, totalPrice }) => {
   return (
     <table className="table-fixed mx-auto rounded-t-lg overflow-hidden md:hidden">
       <thead className="border-b-2 bg-neutral-100">
-        <th className="px-5 py-4"></th>
-        <th className="px-3 py-4">Item</th>
-        <th className="px-3 py-4">Cant.</th>
-        <th className="px-3 py-4">Subt.</th>
-        <th className="px-3 py-4">Quitar</th>
+        <tr>
+          <th className="px-5 py-4"></th>
+          <th className="px-3 py-4">Item</th>
+          <th className="px-3 py-4">Cant.</th>
+          <th className="px-3 py-4">Subt.</th>
+          <th className="px-3 py-4">Quitar</th>
+        </tr>
       </thead>
       <tbody className="font-roboto">
         {products.map((product, index) =>
-          <>
+          <React.Fragment key={index}>
             <tr key={index} className="border-b">
               <td className="px-2 py-4">
                 <button onClick={() => onToggleDetail(index)} className='text-calzate-500 hover:text-calzate-400 hover:shadow-lg'>
@@ -46,7 +48,7 @@ const MobileCart = ({ products, onRemoveItem, totalPrice }) => {
                 <td className="px-2 py-4">Color: {product.item.color[product.color]}</td>
               </tr>
             }
-          </>
+          </React.Fragment>
         )}
         <tr className="border-b">
           <td className=""></td>

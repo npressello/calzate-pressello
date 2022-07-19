@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Hero from "./Hero";
 import ItemList from "./ItemList";
 import { db } from "../../firebase/Firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = (props) => {
   const [loaded, setLoaded] = useState(false);
@@ -20,7 +20,12 @@ const ItemListContainer = (props) => {
   }
 
   const getProductsData = (catId) => {
-    const productsCollection = collection(db, 'items');
+    let productsCollection = collection(db, 'items');
+
+    if (!(catId !== 'hombre' && catId !== 'mujer')) {
+      productsCollection = query(productsCollection, where('gender', "in", [catId, "unisex"]));
+    }
+
     getDocs(productsCollection)
       .then(result => {
         const data = result.docs.map(doc => {

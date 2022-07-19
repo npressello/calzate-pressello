@@ -3,7 +3,7 @@ import ItemDetailSkeleton from "./ItemDetailSkeleton";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/Firebase";
-import { collection, getDocs, query, where, FieldPath, documentId } from "firebase/firestore";
+import { collection, getDocs, query, where, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = (props) => {
   const [product, setProduct] = useState({});
@@ -12,11 +12,13 @@ const ItemDetailContainer = (props) => {
   const { id } = useParams();
 
   const getProductData = () => {
-    const q = query(collection(db, 'items'), where('__name__', "==", id));
-    const spanShot = getDocs(q)
-      .then(result =>
-        result.forEach(doc => setProduct({ id: doc.id, ...doc.data() }))
-      )
+    const consult = doc(db, 'items', id);
+    getDoc(consult)
+      .then((result) => {
+        if (result.exists()) {
+          setProduct({ id: result.id, ...result.data() })
+        }
+      })
       .catch(err => console.log(err))
       .finally(() => setLoaded(true))
   };
