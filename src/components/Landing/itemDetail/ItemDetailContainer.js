@@ -3,7 +3,7 @@ import ItemDetailSkeleton from "./ItemDetailSkeleton";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/Firebase";
-import { collection, getDocs, query, where, doc, getDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = (props) => {
   const [product, setProduct] = useState({});
@@ -11,7 +11,7 @@ const ItemDetailContainer = (props) => {
 
   const { id } = useParams();
 
-  const getProductData = () => {
+  useEffect(() => {
     const consult = doc(db, 'items', id);
     getDoc(consult)
       .then((result) => {
@@ -21,10 +21,6 @@ const ItemDetailContainer = (props) => {
       })
       .catch(err => console.log(err))
       .finally(() => setLoaded(true))
-  };
-
-  useEffect(() => {
-    getProductData();
   }, [id]);
 
   return (

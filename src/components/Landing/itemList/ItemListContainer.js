@@ -11,19 +11,12 @@ const ItemListContainer = (props) => {
 
   const { categoryId } = useParams();
 
-  const getProductsByCategory = (data, catId) => {
-    if (catId === undefined || (catId !== 'hombre' && catId !== 'mujer')) return data;
-    const gender = catId;
-    let prods = {};
-    prods = data.filter((item) => item.gender === gender || item.gender === 'unisex');
-    return prods;
-  }
-
-  const getProductsData = (catId) => {
+  useEffect(() => {
+    setLoaded(false);
     let productsCollection = collection(db, 'items');
 
-    if (!(catId !== 'hombre' && catId !== 'mujer')) {
-      productsCollection = query(productsCollection, where('gender', "in", [catId, "unisex"]));
+    if (!(categoryId !== 'hombre' && categoryId !== 'mujer')) {
+      productsCollection = query(productsCollection, where('gender', "in", [categoryId, "unisex"]));
     }
 
     getDocs(productsCollection)
@@ -33,15 +26,10 @@ const ItemListContainer = (props) => {
             id: doc.id, ...doc.data()
           }
         });
-        setSelectedProducts(getProductsByCategory(data, catId));
+        setSelectedProducts(data);
       })
       .catch(err => console.log(err))
       .finally(() => setLoaded(true))
-  };
-
-  useEffect(() => {
-    setLoaded(false);
-    getProductsData(categoryId);
   }, [categoryId]);
 
   return (

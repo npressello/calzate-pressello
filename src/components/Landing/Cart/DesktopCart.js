@@ -20,7 +20,7 @@ const DesktopCart = ({ products, onRemoveItem, totalPrice }) => {
       <tbody className="font-roboto">
         {products.map((product, index) =>
           <tr key={index} className="border-b">
-            <td className=""><img className="w-16 h-16 object-cover" src={product.item.imgUrl} /></td>
+            <td className=""><img className="w-16 h-16 object-cover" src={product.item.imgUrl} alt={product.item.brand + " " + product.item.title} /></td>
             <td className="px-2 py-4">{product.item.brand} - {product.item.title}</td>
             <td className="px-2 py-4">{product.item.size[product.size]}</td>
             <td className="px-2 py-4">{product.item.color[product.color]}</td>

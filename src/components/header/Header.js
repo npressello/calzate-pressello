@@ -3,7 +3,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import NavBar from './NavBar';
 import LoginNavBar from './LoginNavBar';
 import CartWidget from './CartWidget';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = ({ itemOnCart }) => {

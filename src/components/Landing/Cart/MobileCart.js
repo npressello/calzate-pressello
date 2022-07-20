@@ -43,7 +43,7 @@ const MobileCart = ({ products, onRemoveItem, totalPrice }) => {
             {index === indexDetailsShowing &&
               <tr className="border-b">
                 <td></td>
-                <td className=""><img className="w-16 h-16 object-cover" src={product.item.imgUrl} /></td>
+                <td className=""><img className="w-16 h-16 object-cover" src={product.item.imgUrl} alt={product.item.brand + " " + product.item.title} /></td>
                 <td className="px-2 py-4">Talle: {product.item.size[product.size]}</td>
                 <td className="px-2 py-4">Color: {product.item.color[product.color]}</td>
               </tr>
