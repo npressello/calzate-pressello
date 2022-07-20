@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Hero from "./Hero";
 import ItemList from "./ItemList";
 import { db } from "../../firebase/Firebase";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where, limit } from "firebase/firestore";
 
 const ItemListContainer = (props) => {
   const [loaded, setLoaded] = useState(false);
