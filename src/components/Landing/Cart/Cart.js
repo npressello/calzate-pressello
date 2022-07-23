@@ -3,6 +3,7 @@ import { useContext } from "react";
 import DesktopCart from "./DesktopCart";
 import { Link } from "react-router-dom"
 import MobileCart from "./MobileCart";
+import Swal from "sweetalert2";
 
 const Cart = () => {
   const { products, removeItem } = useContext(context);
@@ -10,7 +11,19 @@ const Cart = () => {
   const totalPrice = products.reduce((acc, product) => acc + (product.item.price * product.quantity), 0);
 
   const onRemoveItem = (itemId) => {
-    removeItem(itemId);
+    Swal.fire({
+      title: '¿Estás seguro de eliminar el prooducto?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, eliminar',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        removeItem(itemId);
+      }
+    })
   }
 
   return (
