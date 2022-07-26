@@ -7,7 +7,7 @@ const CheckOut = () => {
       <h1>Completa tus datos y finaliza la compra</h1>
       <form className="flex flex-col">
         <label className="border-red-500 border">Nombre:
-          <input className="flex border-red-500 border" type={"text"} />
+          <input className="border-red-500 border" type={"text"} />
         </label>
         <label>Apellido:
           <input type={"text"} />

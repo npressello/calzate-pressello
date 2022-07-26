@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Header from './components/header/Header';
 import ItemListContainer from './components/Landing/itemList/ItemListContainer';
 import ItemDetailContainer from './components/Landing/itemDetail/ItemDetailContainer';
