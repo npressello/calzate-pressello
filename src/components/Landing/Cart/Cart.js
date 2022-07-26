@@ -9,9 +9,7 @@ import { db } from "../../firebase/Firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const Cart = () => {
-  const { products, removeItem, getTotalPrice } = useContext(context);
-
-  // const totalPrice = products.reduce((acc, product) => acc + (product.item.price * product.quantity), 0);
+  const { products, removeItem, getTotalPrice, clear } = useContext(context);
 
   const onRemoveItem = (itemId) => {
     Swal.fire({
@@ -31,14 +29,23 @@ const Cart = () => {
 
   const handleCheckOut = (e, buyerData) => {
     e.preventDefault();
-    console.log(buyerData);
-    /* const salesCollection = collection(db, 'ventas');
+    const salesCollection = collection(db, 'ventas');
     addDoc(salesCollection, {
       buyer: buyerData,
-      items: [],
+      items: products,
       date: serverTimestamp(),
       total: getTotalPrice()
-    }) */
+    }).then((result) => {
+      Swal.fire({
+        icon: 'success',
+        title: '¡Compra realizada!',
+        text: `${'Guarda el siguiente numero de id para realizar el seguimiento: ' + result.id}`,
+        confirmButtonText: 'OK'
+      }).then((res) => {
+        if (res.isConfirmed) clear();
+      })
+    })
+
   }
 
   return (

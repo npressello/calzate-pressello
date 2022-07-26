@@ -25,7 +25,7 @@ const ItemDetail = ({ item }) => {
     addItem(item, sizeIndexClicked, colorIndexClicked, quantity);
     Swal.fire({
       title: '¡Agregado al carrito!',
-      text: `${item.brand + '- ' + item.title}`,
+      text: `${item.brand + ' - ' + item.title}`,
       timer: 1000,
       imageUrl: `${item.imgUrl}`,
       imageWidth: 200,

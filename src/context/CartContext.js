@@ -28,6 +28,7 @@ const CustomProvider = ({ children }) => {
 
   const clear = () => {
     setProducts([]);
+    updatePrice();
   }
 
   const isInCart = (itemId) => {
