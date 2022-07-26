@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus, faCircleMinus } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from "react";
 import RemoveFromCart from "../itemDetail/RemoveFromCart";
-import Purcharse from "./Purcharse";
 
 const MobileCart = ({ products, onRemoveItem, totalPrice }) => {
   const [indexDetailsShowing, setindexDetailsShowing] = useState(-1);
@@ -55,7 +54,7 @@ const MobileCart = ({ products, onRemoveItem, totalPrice }) => {
           <td className="py-4"></td>
           <td className="py-4">Total</td>
           <td className="py-4">${totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</td>
-          <td className="py-4"><Purcharse /></td>
+          <td className="py-4"></td>
         </tr>
       </tbody>
     </table>
