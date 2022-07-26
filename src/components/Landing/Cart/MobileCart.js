@@ -53,7 +53,7 @@ const MobileCart = ({ products, onRemoveItem, totalPrice }) => {
           <td className=""></td>
           <td className="py-4"></td>
           <td className="py-4">Total</td>
-          <td className="py-4">${totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</td>
+          <td className="py-4">${totalPrice().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</td>
           <td className="py-4"></td>
         </tr>
       </tbody>

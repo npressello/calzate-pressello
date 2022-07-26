@@ -9,9 +9,9 @@ import { db } from "../../firebase/Firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const Cart = () => {
-  const { products, removeItem } = useContext(context);
+  const { products, removeItem, getTotalPrice } = useContext(context);
 
-  const totalPrice = products.reduce((acc, product) => acc + (product.item.price * product.quantity), 0);
+  // const totalPrice = products.reduce((acc, product) => acc + (product.item.price * product.quantity), 0);
 
   const onRemoveItem = (itemId) => {
     Swal.fire({
@@ -29,19 +29,23 @@ const Cart = () => {
     })
   }
 
-  const handleCheckOut = (e) => {
+  const handleCheckOut = (e, buyerData) => {
     e.preventDefault();
-    const salesCollection = collection(db, 'ventas');
+    console.log(buyerData);
+    /* const salesCollection = collection(db, 'ventas');
     addDoc(salesCollection, {
-
-    })
+      buyer: buyerData,
+      items: [],
+      date: serverTimestamp(),
+      total: getTotalPrice()
+    }) */
   }
 
   return (
     <div className="container mx-auto text-center text-sm">
       <h1 className="my-10 underline italic">Carrito de compras</h1>
-      <MobileCart products={products} onRemoveItem={onRemoveItem} totalPrice={totalPrice} />
-      <DesktopCart products={products} onRemoveItem={onRemoveItem} totalPrice={totalPrice} />
+      <MobileCart products={products} onRemoveItem={onRemoveItem} totalPrice={getTotalPrice} />
+      <DesktopCart products={products} onRemoveItem={onRemoveItem} totalPrice={getTotalPrice} />
       {products.length === 0 ?
         <p className="my-10">No hay productos en el carrito. <Link className="text-lg underline font-roboto font-semibold bg-calzate-400 text-calzate-900 p-2 rounded hover:bg-calzate-300 hover:shadow-lg" exact='true' to={'/'}>Explora la tienda</Link></p>
         : <CheckOut handleCheckOut={handleCheckOut} />}

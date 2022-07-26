@@ -36,7 +36,7 @@ const DesktopCart = ({ products, onRemoveItem, totalPrice }) => {
           <td className="px-4 py-4"></td>
           <td className="px-4 py-4"></td>
           <td className="px-4 py-4">Total</td>
-          <td className="px-4 py-4">${totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")},00</td>
+          <td className="px-4 py-4">${totalPrice().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")},00</td>
           <td className="px-4 py-4"></td>
         </tr>
       </tbody>
