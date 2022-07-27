@@ -6,7 +6,7 @@ import MobileCart from "./MobileCart";
 import Swal from "sweetalert2";
 import CheckOut from "./checkOut/CheckOut";
 import { db } from "../../firebase/Firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp, doc, updateDoc } from "firebase/firestore";
 
 const Cart = () => {
   const { products, removeItem, getTotalPrice, clear } = useContext(context);
@@ -36,16 +36,22 @@ const Cart = () => {
       date: serverTimestamp(),
       total: getTotalPrice()
     }).then((result) => {
+      products.forEach((prod) => {
+        console.log(prod);
+        const updateCollection = doc(db, 'items', prod.item.id);
+        updateDoc(updateCollection, { stock: prod.item.stock - prod.quantity });
+      })
       Swal.fire({
         icon: 'success',
         title: '¡Compra realizada!',
         text: `${'Guarda el siguiente numero de id para realizar el seguimiento: ' + result.id}`,
         confirmButtonText: 'OK'
       }).then((res) => {
-        if (res.isConfirmed) clear();
+        if (res.isConfirmed) {
+          clear();
+        }
       })
     })
-
   }
 
   return (
