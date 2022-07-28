@@ -30,8 +30,8 @@ const Item = ({ item }) => {
 
   return (
     <div className="relative w-44 md:w-60 2xl:w-72 mt-4 mx-auto bg-white flex flex-col overflow-hidden group shadow-md hover:shadow-xl transition-all">
-      <button className={`absolute w-10 h-10 rounded-full right-2 top-2 bg-calzate-900 hover:bg-calzate-800 z-10 ${heartClicked ? 'opacity-100' : 'opacity-50'}`} aria-label='favorite'>
-        <FontAwesomeIcon onClick={clickHeart} icon={heartClicked ? faHeart : regularHeart} className='align-middle h-5 w-5 text-calzate-300 z-10' />
+      <button onClick={clickHeart} className={`absolute w-10 h-10 rounded-full right-2 top-2 bg-calzate-900 hover:bg-calzate-800 z-10 ${heartClicked ? 'opacity-100' : 'opacity-50'}`} aria-label='favorite'>
+        <FontAwesomeIcon icon={heartClicked ? faHeart : regularHeart} className='align-middle h-5 w-5 text-calzate-300 z-10' />
       </button>
       <Link exact='true' to={`/item/${item.id}`}>
         <div className="relative border-b border-black overflow-hidden">
