@@ -19,6 +19,7 @@ Es un sitio ecommerce de calzado utilizado como proyecto educativo para el curso
 - "autoprefixer": "^10.4.7"
 - "postcss": "^8.4.14"
 - "tailwindcss": "^3.1.3"
+
 ## Instalación
 
 1) Clonar el proyecto
@@ -33,7 +34,7 @@ Es un sitio ecommerce de calzado utilizado como proyecto educativo para el curso
 
 **Client:** React, TailwindCSS
 
-**Server:** Firebase/Firestore
+**Server:** Firebase/Firestore (database), AWS S3 (images server)
 
 
 ## Autor
